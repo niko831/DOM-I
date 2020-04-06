@@ -40,3 +40,40 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const navTags = {
+  navTag1: 'Services',
+  navTag2: 'Product',
+  navTag3: 'Vision',
+  navTag4: 'Features',
+  navTag5: 'About',
+  navTag6: 'Contact'
+}
+
+const navLinks = document.querySelectorAll('nav a')
+
+for (let i = 0; i < navLinks.length; i++){
+  const navContents = Object.values(navTags)
+  navLinks[i].textContent = navContents[i]
+}
+
+// const navLink7 = document.createElement('a');
+// const navLink7Text = document.createTextNode('Employees');
+// navLink7.appendChild(navLink7Text);
+// document.querySelector('nav').appendChild(navLink7);
+
+// const navLink8 = document.createElement('a');
+// const navLink8Text = document.createTextNode('Pets');
+// navLink8.appendChild(navLink8Text);
+// document.querySelector('nav').appendChild(navLink8);
+
+const navLink7 = document.createElement('a');
+const navLink7Text = document.createTextNode('Home');
+navLink7.appendChild(navLink7Text);
+
+const navLink8 = document.createElement('a');
+const navLink8Text = document.createTextNode('Employees');
+navLink8.appendChild(navLink8Text);
+
+document.querySelector('nav').prepend(navLink7);
+document.querySelector('nav').append(navLink8);
